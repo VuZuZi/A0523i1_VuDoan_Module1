@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>chọn 1 oto trong danh sách</p>
+
+<!--    <select onchange="funtonNew()" id="mySeclect">-->
+    <select  id="mySeclect">
+        <option value="bạn chọn xe Bim">BMW</option>
+        <option value="bạn chọn xe mẹc">Mercedes</option>
+        <option value="bạn chọn honda">Honda</option>
+    </select>
+</body>
+</html>
+<script>
+    // function funtonNew() {
+    //     var getValue = document.getElementById("mySeclect").value;
+    //     alert(getValue)
+    // }
+
+    var selectElement = document.getElementById("mySeclect");
+    selectElement.addEventListener("change",changeFunction);
+        function changeFunction() {
+            var selectValue = document.getElementById("mySeclect").value;
+            alert(selectValue)
+        }
+
+
+</script>

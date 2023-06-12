@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p onmouseover="testMouse()" style="width: 100%" id="demo" onmouseout="mouseOutTest()" onclick="clickTest()">đây là 1 thẻ p</p>
+    <p onclick="doSomething()" id="clickDemo">click!</p>
+</body>
+</html>
+<script>
+    function testMouse() {
+        // alert("hello")
+        document.getElementById("demo").style.color = "red";
+    }
+    function mouseOutTest() {
+        document.getElementById("demo").style.color = "yellow"
+    }
+    function clickTest() {
+        document.getElementById("demo").style.color = "blue";
+        alert("hello Vu")
+    }
+
+
+    var testClick = document.getElementById("clickDemo");
+    testClick.addEventListener("click",clickFuntion)
+
+    function clickFuntion() {
+        alert("thanhf coong")
+    }
+</script>
