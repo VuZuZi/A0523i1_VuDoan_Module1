@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>điểm trung bình</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th colspan="2">Tính điểm trung bình</th>
+    </tr>
+    <tr>
+        <td>Toán: </td>
+        <td>
+            <input type="number" id="toan">
+        </td>
+    </tr>
+    <tr>
+        <td>Lý: </td>
+        <td>
+            <input type="number" id="ly">
+        </td>
+    </tr>
+    <tr>
+        <td>Hóa: </td>
+        <td>
+            <input type="number" id="hoa">
+        </td>
+    </tr>
+    <tr>
+        <td style="color: chocolate" onclick="diemTb()">Check here! </td>
+        <td id="score"></td>
+    </tr>
+</table>
+
+
+
+<script>
+
+    function diemTb() {
+        let t = parseInt(document.getElementById("toan").value);
+        let l = parseInt(document.getElementById("ly").value);
+        let h = parseInt(document.getElementById("hoa").value);
+        let total = t+l+h;
+        // alert(total)
+        document.getElementById("score").innerHTML = ((t+l+h)/3)
+    }
+
+    // let t = +prompt("nhập điểm toán")
+    // let l = +prompt("nhập điểm toán")
+    // let h = +prompt("nhập điểm toán")
+    // let af=(t+l+h)/3
+    //
+    // alert("điểm trung bình: "+af)
+</script>
+
+</body>
+</html>

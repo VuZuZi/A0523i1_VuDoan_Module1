@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+    </tr>
+    <tr>
+        <td>
+            <input type="number" id="number">
+        </td>
+        <td>
+            <select id="from">
+                <option id="vn">VND</option>
+                <option id="us">USD</option>
+            </select>
+        </td>
+        <td>
+            <select id="to">
+                <option id="vnd">VND</option>
+                <option id="usd">USD</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>Result</td>
+        <td id="res"></td>
+        <td>($1 = 23.487vnd)</td>
+    </tr>
+    <tr>
+        <td>
+            <button type="button" onclick="convert()">Convert</button>
+        </td>
+    </tr>
+</table>
+<script>
+    function convert() {
+        let num = parseInt(document.getElementById("number").value)/1.0;
+        let fro = document.getElementById("from").value;
+        let to = document.getElementById("to").value;
+        let toUsd = num/23487
+        let toVnd = num*23487;
+
+        if (fro==to){
+            document.getElementById("res").innerHTML = num;
+        }else if (fro=='VND'){
+            document.getElementById("res").innerHTML = "$"+toUsd;
+        }else {
+            document.getElementById("res").innerHTML = toVnd+"vnd";
+        }
+
+
+    }
+</script>
+</body>
+</html>

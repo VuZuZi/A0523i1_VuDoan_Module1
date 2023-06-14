@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>select-option</title>
+</head>
+<body>
+<select id="mySelect">
+    <option value="option1">Option 1</option>
+    <option value="option2" selected>Option 2</option>
+    <option value="option3">Option 3</option>
+</select>
+<button onclick="getValue()">Lấy giá trị</button>
+<script>
+    function getValue() {
+        var select = document.getElementById("mySelect");
+        var selectedOption = select.options[select.selectedIndex];
+        var value = selectedOption.value;
+        console.log(value);
+    }
+
+</script>
+</body>
+</html>

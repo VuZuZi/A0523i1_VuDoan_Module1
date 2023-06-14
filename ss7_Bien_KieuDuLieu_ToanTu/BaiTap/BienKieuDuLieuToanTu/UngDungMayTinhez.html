@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th colspan="2" ><input type="number" id="num1"></th>
+        <th colspan="2" ><input type="number" id="num2"></th>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="plus()">Additon(+)</button> </td>
+        <td><button type="button" onclick="subb()">Subtraction(-)</button> </td>
+        <td><button type="button" onclick="mull()">Multiplication(X)</button> </td>
+        <td><button type="button" onclick="divv()">Division(/)</button> </td>
+    </tr>
+    <tr>
+        <td id="ress" colspan="4"></td>
+    </tr>
+    <script>
+        function plus() {
+            let a = parseInt(document.getElementById("num1").value)
+            let b = parseInt(document.getElementById("num2").value)
+            let c = a + b
+            document.getElementById("ress").innerHTML = "Result Additon: "+c;
+        }
+        function subb() {
+            let a = parseInt(document.getElementById("num1").value)
+            let b = parseInt(document.getElementById("num2").value)
+            let c = a - b
+            document.getElementById("ress").innerHTML = "Result Subtraction: "+c;
+        }
+        function mull() {
+            let a = parseInt(document.getElementById("num1").value)
+            let b = parseInt(document.getElementById("num2").value)
+            let c = a * b
+            document.getElementById("ress").innerHTML = "Result Multiplication: "+c;
+        }
+        function divv() {
+            let a = parseInt(document.getElementById("num1").value)
+            let b = parseInt(document.getElementById("num2").value)
+            let c = a / b
+            document.getElementById("ress").innerHTML = "Result Division: "+c;
+        }
+    </script>
+</table>
+</body>
+</html>

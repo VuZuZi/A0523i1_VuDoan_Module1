@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Circle</title>
+</head>
+<body>
+<table >
+    <tr>
+        <th>Bán kính(r):</th>
+        <th>
+            <input type="number" id="r">
+        </th>
+    </tr>
+    <tr>
+        <td onclick="chuVi()">Tính chu vi</td>
+        <td onclick="dientich()">Tính diện tích</td>
+    </tr>
+</table>
+<script>
+    function chuVi() {
+        let a = parseInt(document.getElementById("r").value);
+        let cv =2*Math.PI*a;
+        alert("Hình tròn có bán kính "+a+" chu vi: "+cv)
+    }
+    function dientich() {
+        let a = parseInt(document.getElementById("r").value);
+        let dt =Math.PI*a*a;
+        alert("hình tròn r = "+a+", S = "+dt);
+    }
+</script>
+</body>
+</html>
