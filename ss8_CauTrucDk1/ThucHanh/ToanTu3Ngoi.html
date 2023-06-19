@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>bai 1</th>
+    </tr>
+    <tr>
+        <td>1st:</td>
+        <td>
+            <input type="number" id="fst">
+        </td>
+    </tr>
+    <tr>
+        <td>2nd:</td>
+        <td>
+            <input type="number" id="sec">
+        </td>
+    </tr>
+    <tr>
+        <td><input type="button" onclick="below()" value="result"></td>
+        <td>
+            <p id="textBe"></p>
+        </td>
+    </tr>
+</table>
+<h3>Bài 2</h3>
+<table>
+    <tr>
+        <td>
+            Message:
+        </td>
+        <td>
+            <input type="text" id="textMes">
+        </td>
+        <td>
+            <input type="button" value="send" onclick="mess()">
+        </td>
+    </tr>
+</table>
+<script>
+    function below() {
+        let a = +document.getElementById('fst').value;
+        let b = +document.getElementById('sec').value;
+        resultBe = ((a + b) < 4) ? 'Below' :'Over';
+        document.getElementById('textBe').innerText = resultBe;
+    }
+    function mess() {
+        let login = document.getElementById('textMes').value.toLowerCase();
+        let mess = (login == 'employee') ? 'Hello' : (login == 'director') ? 'Greetings' : (login == '') ? 'No Login' : '';
+        alert(mess)
+    }
+</script>
+</body>
+</html>
