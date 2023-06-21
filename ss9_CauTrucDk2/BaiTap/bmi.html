@@ -6,7 +6,21 @@
 </head>
 <body>
 <script>
+    let cao = parseFloat(prompt('Nhập Chiều cao (M)'))
+    let nang = parseInt(prompt('Nhập cân nặng (Kg)'))
+    let cao2= cao*cao
+    let BMI = nang/cao2
+    if (BMI<18.5){
+        alert('Underweight')
 
+    }else if (BMI<25){
+        alert('Normal')
+    }
+    else if (BMI<30){
+        alert('Overweight')
+    }else {
+        alert('Obese')
+    }
 </script>
 </body>
 </html>

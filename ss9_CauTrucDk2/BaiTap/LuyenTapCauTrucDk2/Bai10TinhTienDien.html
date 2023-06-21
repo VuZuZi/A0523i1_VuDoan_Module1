@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table style="text-align: center">
+    <tr>
+        <td></td>
+        <td>Đơn giá(đồng/kWh)</td>
+        <td>Sản Lượng(kWh)</td>
+    </tr>
+    <tr>
+        <td>Bậc thang 1</td>
+        <td>1 728</td>
+        <td>
+            <p id="bt1">50</p>
+        </td>
+    </tr>
+    <tr>
+        <td>Bậc thang 2</td>
+        <td>1 786</td>
+        <td>
+            <p id="bt2">50</p>
+        </td>
+    </tr>
+    <tr>
+        <td>Bậc thang 3</td>
+        <td>2 074</td>
+        <td>
+            <p id="bt3">100</p>
+        </td>
+    </tr>
+    <tr>
+        <td>Bậc thang 4</td>
+        <td>2 612</td>
+        <td>
+            <p id="bt4">100</p>
+        </td>
+    </tr>
+    <tr>
+        <td>Bậc thang 5</td>
+        <td>2 919</td>
+        <td>
+            <p id="bt5">100</p>
+        </td>
+    </tr>
+    <tr>
+        <td>Bậc thang 6</td>
+        <td>3015</td>
+        <td>
+            <p id="bt6"></p>
+        </td>
+    </tr>
+    <tr>
+        <td>Thành tiền</td>
+        <td><p id="result"></p> </td>
+    </tr>
+    <tr>
+        <td>
+            Tổng điện năng tiêu thụ(kWh)
+        </td>
+        <td>
+            <input id="dien" type="number">
+        </td>
+        <td>
+            <button type="button" onclick="tiendien()">Tính</button>
+        </td>
+    </tr>
+</table>
+<script>
+function tiendien() {
+    soDien = parseInt(document.getElementById("dien").value);
+    reTienDien = 0;
+    if (soDien <= 50){
+        reTienDien = soDien * 1728;
+        document.getElementById("bt1").innerText = soDien;
+    }else {
+        reTienDien = 50*1728;
+        soDien -= 50;
+        document.getElementById("bt1").innerText = "50";
+        if (soDien <= 50){
+            reTienDien += (soDien * 1786);
+            document.getElementById("bt2").innerText = soDien;
+
+        }else{
+            reTienDien += (50 * 1786);
+            soDien -= 50;
+            document.getElementById("bt2").innerText = "50";
+            if (soDien <= 100){
+                reTienDien += (soDien * 2074);
+                document.getElementById("bt3").innerText = soDien;
+
+            }else{
+                reTienDien += (100 * 2074);
+                soDien -= 100;
+                document.getElementById("bt3").innerText = "100";
+                if (soDien <= 100){
+                    reTienDien += (soDien * 2612);
+                    document.getElementById("bt4").innerText = soDien;
+
+                }else{
+                    reTienDien += (100 * 2612);
+                    soDien -= 100;
+                    document.getElementById("bt4").innerText = "100";
+                    if (soDien <= 100){
+                        reTienDien += (soDien * 2919);
+                        document.getElementById("bt5").innerText = soDien;
+
+                    }else{
+                        reTienDien += (100 * 2919);
+                        soDien -= 100;
+                        document.getElementById("bt5").innerText = "100";
+                        if (soDien > 0){
+                            document.getElementById("bt6").innerText = soDien;
+                            reTienDien += soDien*3015;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    document.getElementById("result").innerText = reTienDien + "đồng";
+}
+</script>
+</body>
+</html>

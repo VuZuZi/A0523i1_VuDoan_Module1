@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Nhập mức lương của bạn(nghìn đồng)</td>
+        <td>
+            <input type="number" id="thuNhap">
+        </td>
+    </tr>
+    <tr>
+        <td>Nhập số người phụ thuộc</td>
+        <td><input type="number" id="people"></td>
+    </tr>
+    <tr>
+        <td>Thuế của bạn:</td>
+        <td>
+            <p id="result">
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <button onclick="tinhThue()">Tính</button>
+        </td>
+    </tr>
+</table>
+<script>
+    function tinhThue() {
+        money = parseInt(document.getElementById("thuNhap").value);
+        people = parseInt(document.getElementById("people").value);
+        monForPer = people*4400
+        chiuThue = money - 11000 - monForPer;
+        thue = 0;
+        if (chiuThue < 0){
+            document.getElementById("result").innerText = "bạn chưa cần đóng thuế"
+        }else if (chiuThue <= 5000){
+            thue = (chiuThue / 100 * 5);
+            document.getElementById("result").innerText= thue;
+        }else if (chiuThue <= 10000){
+            thue = (chiuThue / 100 * 10) - 0.25;
+            document.getElementById("result").innerText= thue;
+        }else if (chiuThue <= 18000){
+            thue = (chiuThue / 100 * 15) - 0.74;
+            document.getElementById("result").innerText= thue;
+        }else if (chiuThue <= 32000){
+            thue = (chiuThue / 100 * 20) - 1.65;
+            document.getElementById("result").innerText= thue;
+        }else if (chiuThue <= 52000){
+            thue = (chiuThue / 100 * 25) - 3.25;
+            document.getElementById("result").innerText= thue;
+        }else if (chiuThue <= 80000){
+            thue = (chiuThue / 100 * 30) - 5.85;
+            document.getElementById("result").innerText= thue;
+        }else {
+            thue = (chiuThue / 100 * 35) - 9.85
+            document.getElementById("result").innerText= thue;
+        }
+    }
+</script>
+</body>
+</html>

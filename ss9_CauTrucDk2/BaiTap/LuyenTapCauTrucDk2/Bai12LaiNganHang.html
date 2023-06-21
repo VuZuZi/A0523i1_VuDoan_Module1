@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>Nhập số tiền b muốn gửi(nghìn đồng)</td>
+        <td>
+            <input type="number" id="money">
+        </td>
+    </tr>
+    <tr>
+        <td>Nhập số tiền lãi hàng tháng(%)</td>
+        <td>
+            <input type="number" id="lai">
+        </td>
+    </tr>
+    <tr>
+        <td>Nhập số tháng gửi</td>
+        <td>
+            <input type="number" id="month">
+        </td>
+    </tr>
+    <tr>
+        <td>Sô tiền sau khi hoàn thành</td>
+        <td>
+            <p id="monAfter"></p>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <button onclick="resmon()">Tính</button>
+        </td>
+    </tr>
+</table>
+<script>
+    function resmon() {
+        var mon = parseInt(document.getElementById("money").value);
+        var lai = parseInt(document.getElementById("lai").value);
+        var ky = parseInt(document.getElementById("month").value);
+
+        var result = Math.pow((1+(lai/100)),ky)*mon;
+        document.getElementById("monAfter").innerText = result;
+
+    }
+</script>
+</body>
+</html>
