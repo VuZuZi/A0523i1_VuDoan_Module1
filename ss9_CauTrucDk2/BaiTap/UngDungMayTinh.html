@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>calculator</title>
+    <script type="text/javascript" hre></script>
+</head>
+<body>
+<table>
+    <tr>
+        <th colspan="4" id="display"></th>
+    </tr>
+    <tr>
+        <td onclick="mn()">
+            <button type="button">(</button></td>
+        <td onclick="dn()"><button type="button">)</button></td>
+        <td onclick="per()"><button type="button">%</button></td>
+        <td onclick="del()"><button type="button">AC</button></td>
+    </tr>
+    <tr>
+        <td onclick="n7()"><button type="button">7</button></td>
+        <td onclick="n8()"><button type="button">8</button></td>
+        <td onclick="n9()"><button type="button">9</button></td>
+        <td onclick="chia()"><button type="button">/</button></td>
+    </tr>
+    <tr>
+        <td onclick="n4()"><button type="button">4</button></td>
+        <td onclick="n5()"><button type="button">5</button></td>
+        <td onclick="n6()"><button type="button">6</button></td>
+        <td onclick="nhan()"><button type="button">*</button></td>
+    </tr>
+    <tr>
+        <td onclick="n1()"><button type="button">1</button></td>
+        <td onclick="n2()"><button type="button">2</button></td>
+        <td onclick="n3()"><button type="button">3</button></td>
+        <td onclick="tru()"><button type="button">-</button></td>
+    </tr>
+    <tr>
+        <td onclick="n0()"><button type="button">0</button></td>
+        <td onclick="cham()"><button type="button">.</button></td>
+        <td onclick="resultCal()"><button type="button"  style="background: #0e3cfe; color: white">=</button></td>
+        <td onclick="cong()"><button type="button">+</button></td>
+    </tr>
+</table>
+<script>
+    function resultCal() {
+        let a = document.getElementById("display").innerText;
+
+        document.getElementById("display").innerText = eval(a);
+    }
+    function cong() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"\+"
+        // alert(eval("2+3"))
+        document.getElementById("display").innerHTML=b
+    }
+    function tru() {
+        let a = document.getElementById("display").innerText;
+        let b =  a + "-"
+        document.getElementById("display").innerHTML=b
+    }
+    function nhan() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"*"
+        document.getElementById("display").innerHTML=b
+    }
+    function chia() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"/"
+        document.getElementById("display").innerHTML=b
+    }
+
+
+
+    function mn() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"("
+        document.getElementById("display").innerHTML=b
+    }
+    function dn() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+")"
+        document.getElementById("display").innerHTML=b
+    }
+    function del() {
+        let a = document.getElementById("display").innerText;
+        let b =  ""
+        document.getElementById("display").innerHTML=b
+    }
+    function n0() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"0"
+        document.getElementById("display").innerHTML=b
+    }
+    function n1() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"1"
+        document.getElementById("display").innerHTML=b
+    }
+    function n2() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"2"
+        document.getElementById("display").innerHTML=b
+    }
+    function n3() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"3"
+        document.getElementById("display").innerHTML=b
+    }
+    function n4() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"4"
+        document.getElementById("display").innerHTML=b
+    }
+    function n5() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"5"
+        document.getElementById("display").innerHTML=b
+    }
+    function n6() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"6"
+        document.getElementById("display").innerHTML=b
+    }
+    function n7() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"7"
+        document.getElementById("display").innerHTML=b
+    }
+    function n8() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"8"
+        document.getElementById("display").innerHTML=b
+    }
+    function n9() {
+        let a = document.getElementById("display").innerText;
+        let b =  a+"9"
+        document.getElementById("display").innerHTML=b
+    }
+</script>
+</body>
+</html>
+<style>
+    table {
+        text-align: center;
+        border-collapse: collapse;
+        width: 40%;
+    }
+    table,th,td{
+        border: 1px solid black;
+    }
+
+    td, th{
+        width: 25%;
+        height: 30px;
+    }
+    button{
+        width: 100%;
+        height: 100%;
+    }
+</style>

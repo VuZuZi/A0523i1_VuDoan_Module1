@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    alert("Phương trình bậc 2 có dạng Ax^2 + Bx + C = 0")
+    a = +prompt("nhập a: ")
+    b = +prompt("Nhập b: ")
+    c = +prompt("nhập c: ")
+
+    dt = b*b - 4*a*c;
+    if (dt < 0){
+        alert(a+"x^2 + "+b+"x + "+c+" = 0/n" +
+            "Vô nghiệm")
+    }else if (dt == 0){
+        x = -b/(2*a)
+        alert(a+"x^2 + "+b+"x + "+c+" = 0\n" +
+            "Có nghiệm kép\n" +
+            "x1 = x2 = "+x)
+    }else {
+        xx = (- b - Math.sqrt(dt))/2*a
+        xy = (- b + Math.sqrt(dt))/2*a
+        alert(a+"x^2 + "+b+"x + "+c+" = 0\n" +
+            "Có nghiệm\n" +
+            "x1 = "+xx+" x2 = "+xy)
+    }
+
+
+</script>
+</body>
+</html>
