@@ -7,22 +7,17 @@
 <body>
 <p id="num"></p>
 <script>
-        for (let i = 1; i <= 10; i++) {
-        if (i%3==0&&i%5==0){
-            let a = " FizzBuzz";
-            document.getElementById("num").innerText = document.getElementById("num").innerText + a;
-            continue
+        for (let i = 1; i <= 20; i++) {
+            let a = i+""
+        if ((i%3)==0){
+            a = "Fizz";
+            if ((i%5)==0){
+                a = "Fizzbuzz"
+            }
+        }else if ((i%5)==0){
+            a ="Buzz";
         }
-        if (i%3==0){
-            let a = " Fizz";
-            document.getElementById("num").innerText = document.getElementById("num").innerText + a;
-            continue
-        }
-        if (i%5==0){
-            let a = " Buzz";
-            document.getElementById("num").innerText = document.getElementById("num").innerText + a;
-            continue
-        }
+    document.write(a+"<br>")
     }
 </script>
 </body>
