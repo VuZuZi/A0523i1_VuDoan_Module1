@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="snt"></p>
+<script>
+    let n = +prompt("input length: ")
+    let find = 0;
+    let snt = "";
+    let isNum = true;
+    let count = 0;
+    while (true){
+        find++;
+        isNum = true;
+        for (let i = 2; i < find; i++) {
+            if (find%i==0){
+                isNum = false;
+                break;
+            }
+        }
+        if (isNum == true){
+            // alert(find)
+            snt += " "+find;
+            count++;
+
+        }
+        if (count >= n){
+            break;
+        }
+    }
+    alert(snt)
+    document.getElementById("snt").innerText = snt
+
+</script>
+</body>
+</html>

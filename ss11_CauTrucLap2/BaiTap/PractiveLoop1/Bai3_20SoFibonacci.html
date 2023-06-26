@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="fi"></p>
+<script>
+    let a = 0;
+    let b = 1;
+    let fi = "0, 1"
+    for (let i = 2; i < 20; i++) {
+        c = a + b;
+        a = b;
+        b = c
+        fi += ", "+c;
+    }
+    document.getElementById("fi").innerText = fi;
+</script>
+</body>
+</html>

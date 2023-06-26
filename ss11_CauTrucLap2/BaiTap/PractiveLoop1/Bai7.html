@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="num"></p>
+<script>
+        for (let i = 1; i <= 10; i++) {
+        if (i%3==0&&i%5==0){
+            let a = " FizzBuzz";
+            document.getElementById("num").innerText = document.getElementById("num").innerText + a;
+            continue
+        }
+        if (i%3==0){
+            let a = " Fizz";
+            document.getElementById("num").innerText = document.getElementById("num").innerText + a;
+            continue
+        }
+        if (i%5==0){
+            let a = " Buzz";
+            document.getElementById("num").innerText = document.getElementById("num").innerText + a;
+            continue
+        }
+    }
+</script>
+</body>
+</html>
