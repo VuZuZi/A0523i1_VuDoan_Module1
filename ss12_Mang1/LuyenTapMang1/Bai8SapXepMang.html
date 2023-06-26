@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = new Array();
+    let local = -1;
+
+    a = [-3,5,1,3,2,10];
+    document.write("Arr["+a+"]<br>")
+    for (let i = 0; i < a.length; i++) {
+        for (let j = i; j < a.length; j++) {
+            if (a[i]<a[j]) {
+                temp = a[i]
+                a[i] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+    document.write("Arr["+a+"]<br>")
+
+</script>
+</body>
+</html>

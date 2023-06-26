@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = new Array();
+    let count = 0;
+    for (let i = 0; i < 10; i++) {
+        a[i] = +prompt("Arr["+i+"] = ")
+        if (a[i] >= 10){
+            count++
+        }
+    }
+    document.write("Arr["+a+"]<br> Có "+count+" phần tử lớn hơn hoặc bằng 10")
+
+</script>
+</body>
+</html>

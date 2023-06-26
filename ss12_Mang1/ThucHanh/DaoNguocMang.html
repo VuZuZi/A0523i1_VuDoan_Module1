@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = new Array();
+    a = [-3,5,1,3,2,10];
+    let siz = a.length;
+    document.write("Mảng ban đầu:"+ a+"<br>");
+
+    for (let i = 0; i < siz/2; i++) {
+        temp = a[i]
+        a[i] = a[siz-i]
+        a[siz-i] = temp
+    }
+    document.write("Mảng sau đảo: " + a)
+</script>
+</body>
+</html>

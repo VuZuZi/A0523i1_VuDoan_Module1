@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = new Array();
+    let b;
+    let local = -1
+    let check = false
+    for (let i = 0; i < 10; i++) {
+        a[i] = +prompt("Nhập Arr["+i+"] :")
+    }
+    document.write("Arr["+a+"]<br>")
+    b = +prompt("Nhập số muốn tìm")
+    for (let i = 0; i < 10; i++) {
+        if (a[i]==b){
+            check = true
+            local = i + 1
+        }
+    }
+    if (check){
+    document.write(b+" in Arr["+local+"]")
+    }else {
+        document.write(b+" not in Arr["+a+"]")
+    }
+</script>
+</body>
+</html>

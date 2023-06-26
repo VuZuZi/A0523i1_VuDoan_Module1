@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = [1,2,5,6,7,2,5,2,6,8]
+    let max = a[0]
+    let sum = 0;
+    for (let i = 0; i < a.length; i++) {
+        sum += a[i]
+        if (max < a[i]){
+            max = a[i];
+        }
+    }
+    let aver = sum/a.length;
+    document.write("Arr["+a+"]")
+    document.write("<br>Max: "+max)
+    document.write("<br>Average: " + aver)
+</script>
+</body>
+</html>

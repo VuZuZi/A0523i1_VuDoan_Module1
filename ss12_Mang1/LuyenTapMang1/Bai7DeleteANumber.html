@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = new Array();
+    let local = -1;
+    a = [-3,5,1,3,2,10];
+    document.write("Arr["+a+"]<br>")
+    let b = +prompt("Input del number: ")
+    let check = false
+    for (let i = 0; i < a.length; i++) {
+        if (b == a[i]){
+            local = i;
+            check = true;
+            for (let j = i; j < (a.length-1); j++) {
+                a[j] = a[j+1]
+            }
+            a[a.length-1] = 0
+        }
+    }
+    if (check){
+        document.write("<br>" +
+            b+" in Arr["+local+"] is delete <br>" +
+            "New Arr[" +a+
+            "]")
+    }
+
+</script>
+</body>
+</html>

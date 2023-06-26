@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h2>Lưu Giá Trị</h2>
+<input type="text" id="gtr"/>
+<button id="ktr" onclick="add1()">Add</button>
+<button id="Luu" onclick="display1()">Lưu</button>
+<p id="hienthi"></p>
+<script>
+    let x = 0;
+    let array = new Array();
+
+    function add1() {
+        array[x] = document.getElementById("gtr").value;
+        alert("Giá trị : " + array[x] + " Vị trí " + x);
+        x++;
+        document.getElementById("gtr ").value = "";
+    }
+    function display1() {
+        let e = "<hr/>";
+        for (let i = 0; i < array.length; i++) {
+            e += "Element " + i + " = " + array[i] + "<br/>";
+        }
+        document.getElementById("hienthi").innerHTML = e;
+        //    .innerHTML là lệnh lấy giá trị của id hiển thị ra màn hình
+    }
+</script>
+</body>
+</html>
