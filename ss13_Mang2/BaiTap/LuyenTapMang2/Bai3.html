@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 3: Viết một chương trình khai báo một mảng ký tự và kích thước của mảng.
+ Chương trình này đếm số ký tự số trong mảng.-->
+<script>
+    let a = prompt("kích thước của mảng")
+    let arr = new Array()
+    let count = 0;
+    for (let i = 0; i < a; i++) {
+        arr[i] = prompt("Nhập phần tử "+i+"/"+a+": ")
+        count++;
+    }
+    console.log("Array có "+count+" phần tử")
+</script>
+</body>
+</html>

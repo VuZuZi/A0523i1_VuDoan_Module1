@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 4: Viết một chương trình để đếm số từ trong một chuỗi-->
+<script>
+    let a = prompt("Nhập chuỗi")
+    let temp = prompt("Nhập từ muốn ktr");
+    let count = 0;
+    for (let i = 0; i < a.length; i++) {
+        if (temp.includes(a[i])){
+            count++
+        }
+    }
+    console.log("Chuỗi "+a+" có "+count+" "+temp)
+</script>
+</body>
+</html>

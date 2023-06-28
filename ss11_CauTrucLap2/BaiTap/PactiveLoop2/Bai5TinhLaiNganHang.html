@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>
+            <label for="fMon">Số tiền gốc(triệu đồng)</label>
+        </th>
+        <th>
+            <label for="kyHan">Kỳ hạn tính lãi</label>
+        </th>
+        <th>
+            <label for="laisuat">Lãi Suất(%/kỳ hạn)</label>
+        </th>
+    </tr>
+    <tr>
+        <td><input type="number" id="fMon"></td>
+        <td><input type="number" id="kyHan"></td>
+        <td><input type="number" id="laisuat"></td>
+    </tr>
+    <tr>
+        <td><button type="submit" onclick="successs()">Tính Tiền</button> </td>
+        <td><p id="sucM"></td>
+    </tr>
+    <tr>
+        <td><button type="reset" onclick="newform()">Nhập lại</button> </td>
+    </tr>
+</table>
+</body>
+<style>
+    button{
+        width: 50%;
+        justify-content: center;
+    }
+</style>
+<script>
+    function successs() {
+        let mon = parseInt(document.getElementById("fMon").value);
+        let t = parseInt(document.getElementById("kyHan").value);
+        let percent = parseInt(document.getElementById("laisuat").value)/100;
+        let temp = 1+percent;
+        let a = 0;
+        alert(temp)
+        let b = temp;
+        for (let i = 1; i < t; i++) {
+            temp = temp * b
+        }
+        alert(temp)
+        a = mon*temp
+        document.getElementById("sucM").innerText = a
+    }
+    function newform() {
+        document.getElementById("fMon").value = "";
+        document.getElementById("kyHan").value = "";
+        document.getElementById("laisuat").value = "";
+        document.getElementById("sucM").innerText = "";
+    }
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // i 'The Quick Brown Fox' kết quả của chương trình là 'tHE qUICK bROWN fOX'.
+    let a = prompt("Input String");
+    let b = new Array()
+
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] >= 'A' && a<='Z'){
+            temp = a[i]
+            // alert(temp)
+            b[i] = temp.toLowerCase();
+        }
+        if (a[i] >= 'a' && a<='z'){
+            b[i] = a[i].toUpperCase();
+        }
+
+    }
+    console.log(b.join(""))
+
+</script>
+</body>
+</html>
