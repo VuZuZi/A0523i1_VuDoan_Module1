@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <label for="dof">Nhiệt độ F</label>
+        </td>
+        <td>
+            <input type="number" id="dof">
+        </td>
+    </tr>
+    <tr>
+        <td>Độ C</td>
+        <td><p id="doC"></td>
+    </tr>
+    <tr>
+        <td>
+            <button type="submit" onclick="doFsangC()">Chuyển</button>
+        </td>
+    </tr>
+</table>
+</body>
+<script>
+    function doFsangC() {
+        let f = parseInt(document.getElementById("dof").value);
+        let c = (f-32)/1.8;
+        document.getElementById("doC").innerText = c;
+    }
+</script>
+</html>

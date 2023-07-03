@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = confirm("F to M true?");
+    if (a){
+        let f = +prompt("nhập feet")
+        alert(a+"F = "+fToM(f)+"M");
+
+    }
+    else {
+            alert("c")
+        let m = +prompt("nhập m")
+        alert(m+"M = "+mToF(m)+"F");
+    }
+    function fToM(f) {
+        let m = 0.305 * f
+        return m
+    }
+    function mToF(m) {
+        let f = 3.279 * m;
+        return f;
+    }
+</script>
+</body>
+</html>
