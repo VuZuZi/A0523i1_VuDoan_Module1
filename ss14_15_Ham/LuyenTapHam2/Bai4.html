@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.-->
+<script>
+    let a = prompt("input a number");
+    function checNum(number){
+        if (isNaN(parseInt(number))){
+            document.write(number+" is not a number");
+        }else {
+            document.write(number+" is a number");
+        }
+    }
+    checNum(a)
+    // document.write(checNum(a))
+</script>
+
+</body>
+</html>

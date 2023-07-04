@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.-->
+<table>
+    <tr>
+        <td>
+            <label for="fNum">1st number</label>
+        </td>
+        <td>
+            <input type="number" id="fNum">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="sNum">2nd number</label>
+        </td>
+        <td>
+            <input type="number" id="sNum">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="changeNum()">Đổi</button>
+        </td>
+    </tr>
+</table>
+<script>
+    function changeNum() {
+        let a = document.getElementById("fNum").value;
+        let b = document.getElementById("sNum").value;
+        let temp = a;
+        a = b;
+        b = temp;
+        document.getElementById("fNum").value = a;
+        document.getElementById("sNum").value = b;
+
+    }
+</script>
+</body>
+</html>
