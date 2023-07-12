@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCN</title>
+</head>
+<body>
+<script>
+    let hcn1 = new hcn(2,3);
+    document.write(hcn1.tinhChuVi())
+    document.write(hcn1.tinhDienTich())
+
+    function hcn(height, width) {
+        this.height = height;
+        this.width = width;
+
+        this.getWidth = function () {
+            return this.width
+        }
+        this.getHeight = function () {
+            return this.height
+        }
+        this.setWidth = function (wNew) {
+            this.width = wNew
+        }
+        this.setHeight = function (hNew) {
+            this.height = hNew
+        }
+        this.tinhChuVi = function () {
+            return (this.width+this.height)*2;
+        }
+        this.tinhDienTich = function () {
+            return (this.width*this.height);
+        }
+
+    }
+</script>
+</body>
+</html>

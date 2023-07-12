@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let do25 = new temper(25);
+    document.write(do25.toF())
+    document.write(do25.toK())
+
+    function temper(doC) {
+        this.doC = doC;
+
+        this.toF = function () {
+            return  this.doC*9/5+32
+        }
+        this.toK = function () {
+            return this.doC +273.15;
+        }
+    }
+</script>
+</body>
+</html>
