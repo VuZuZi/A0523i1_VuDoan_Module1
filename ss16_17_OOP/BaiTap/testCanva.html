@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--// vẽ đường thẳng-->
+<canvas id="myCanvas" width="200" height="200" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.</canvas>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.moveTo(0,0);
+    ctx.lineTo(100,200);
+    ctx.stroke();
+</script>
+
+<!--// vẽ hình tròn-->
+<canvas id="canvas2" width="200" height="200" style="border: 1px solid black;"></canvas>
+<script>
+    var c2 = (document.getElementById("canvas2")).getContext("2d");
+    c2.beginPath();
+    c2.arc(95,50,40,0,2*Math.PI)
+    c2.stroke();
+</script>
+
+<!--//vẽ chữ-->
+<canvas id="canvas3" width="200" height="200" style="border: 1px solid black;"></canvas>
+<script>
+    var c3 = (document.getElementById("canvas3")).getContext("2d");
+    c3.font = "30px Arial";
+    // c3.fillText("Hello World",10,50);
+    c3.strokeText("Hello world",10,50);
+</script>
+
+<!--Hiệu ứng Gradient-->
+<canvas id="canvas4" width="200" height="200" style="border: 1px solid black;"></canvas>
+<script>
+    var c4 = (document.getElementById("canvas4")).getContext("2d");
+
+    var grd = c4.createLinearGradient(0,0,200,0);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+
+    // Fill with gradient
+    c4.fillStyle = grd;
+    c4.fillRect(10,10,150,80);
+</script>
+
+<!--Hiệu ứng gradient tròn-->
+<canvas id="canvas5" width="200" height="200" style="border: 1px solid black;"></canvas>
+<script>
+    var c5 = document.getElementById("canvas5");
+    var ctxx = c5.getContext("2d");
+
+    // Create gradient
+    var grd = ctxx.createRadialGradient(75,50,5,90,60,100);
+    grd.addColorStop(0,"red");
+    grd.addColorStop(1,"white");
+
+    // Fill with gradient
+    ctxx.fillStyle = grd;
+    ctxx.fillRect(10,10,150,80);
+</script>
+
+
+
+
+
+</body>
+</html>

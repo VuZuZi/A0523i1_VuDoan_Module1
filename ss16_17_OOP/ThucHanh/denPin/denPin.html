@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Pow {
+        constructor(nangLuong) {
+
+            this.nangLuong = +nangLuong;
+        }
+        getNangLuong = function () {
+            return this.nangLuong;
+        }
+        setNangLuong = function () {
+            let temp = +prompt("input power");
+            if (temp>=0&&temp<11){
+                this.nangLuong = temp;
+            }else {
+                this.setNangLuong();
+            }
+        }
+    }
+    function DenPin(onOff,pin) {
+        this.onOff = onOff;
+        this.pin = pin;
+
+        this.batDen = function () {
+            if (this.onOff == true){
+                alert("đèn đang bật");
+                return
+            }
+            if (this.pin.getNangLuong()>0){
+                this.onOff = true;
+                alert("đã bật đèn");
+                this.pin --;
+            }else {
+                alert("het pin");
+            }
+        }
+        this.tatDen = function () {
+            if (this.onOff == false){
+                alert("đèn đang tắt")
+                return
+            }else {
+                this.onOff = false;
+                alert("đã tắt đèn");
+            }
+
+        }
+    }
+
+    let pin1 = new Pow(5);
+    let den = new DenPin(false,pin1);
+    den.batDen();
+    den.batDen();
+
+</script>
+
+</body>
+</html>

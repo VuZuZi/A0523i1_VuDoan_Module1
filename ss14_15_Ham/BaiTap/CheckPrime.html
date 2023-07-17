@@ -6,22 +6,28 @@
 </head>
 <body>
 <script>
-    function isPrime(number){
+    function isPrime(number) {
         let a = number;
-        if (a < 2){
-            return alert(a + " not is prime")
+        let check = true;
+        if (a < 2) {
+            check = false;
         }
         let step = 2;
-        for (let i = 2; i <a; i++) {
-            if (a%i==0){
-                return alert(a + " not is prime")
+        for (let i = 2; i < a; i++) {
+            if (a % i == 0) {
+                check = false;
             }
         }
-        return alert(a + " is prime")
+        if (check){
+            alert(a + " is a prime")
+        }else {
+            alert(a + " not is prime")
+        }
     }
+
     let temp = +prompt("input a number")
     isPrime(temp)
-    console.log(temp+1)
+    console.log(temp + 1)
 </script>
 </body>
 </html>
