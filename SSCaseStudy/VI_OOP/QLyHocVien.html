@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng hệ thống quản lý học viên </title>
+</head>
+<body>
+<script>
+    class Students {
+        constructor(id,name, clas,mail,birth,module) {
+            this.id = id;
+            this.name = name;
+            this.clas = clas;
+            this.mail = mail;
+            this.birth = birth;
+            this.module = module;
+        }
+
+
+        get id() {
+            return this.id;
+        }
+
+        set id(value) {
+            this.id = value;
+        }
+
+        get name() {
+            return this.name;
+        }
+
+        set name(value) {
+            this.name = value;
+        }
+
+        get clas() {
+            return this.clas;
+        }
+
+        set clas(value) {
+            this.clas = value;
+        }
+
+        get mail() {
+            return this.mail;
+        }
+
+        set mail(value) {
+            this.mail = value;
+        }
+
+        get birth() {
+            return this.birth;
+        }
+
+        set birth(value) {
+            this.birth = value;
+        }
+
+        get module() {
+            return this.module;
+        }
+
+        set module(value) {
+            this.module = value;
+        }
+    }
+    function showStudentsList(arr) {
+        let tableShow = "<table border='1'>";
+        tableShow += "<tr> " +
+            "<th>#</th>" +
+            "<th>ID </th>" +
+            "<th>Tên </th>" +
+            "<th>Class</th>" +
+            "<th>Email</th>" +
+            "<th>Birth</th>" +
+            "<th>Module</th>" +
+            " </tr>";
+
+        for (let i = 0; i < arr.length; i++) {
+            tableShow += "<tr> " +
+                "<td>" + (i + 1) + "</td>" +
+                "<td>" + arr[i].id + "</td>" +
+                "<td>" + arr[i].name + "</td>" +
+                "<td>" + arr[i].clas + "</td>" +
+                "<td>" + arr[i].mail + "</td>" +
+                "<td>" + arr[i].birth + "</td>" +
+                "<td>" + arr[i].module + "</td>" +
+                "</tr>";
+        }
+
+        tableShow += "</table>";
+        document.getElementById("tableBook").innerHTML = strTable;
+    }
+
+</script>
+</body>
+</html>

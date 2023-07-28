@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viết hàm tính tổng các số chẵn trong ma trận có kích thước m*n. Với m, n là các số nhập từ bàn phím.</title>
+</head>
+<body>
+<script>
+    let height = +prompt("nhập chiều cao của ma trận");
+    let weight = +prompt("nhập chiều rộng của ma trân");
+
+
+    let array = new Array();
+    let sum = 0;
+    for (let i = 0; i < height; i++) {
+        let tempArr = new Array();
+        for (let j = 0; j < weight; j++) {
+            let value = prompt(`Nhập giá trị tại hàng ${i + 1}, cột ${j + 1}:`);
+            if (parseInt(value)%2==0){
+                sum += parseInt(value);
+            }
+            tempArr.push(value);
+        }
+        array.push(tempArr);
+    }
+
+    console.log(array)
+    console.log(sum)
+</script>
+</body>
+</html>

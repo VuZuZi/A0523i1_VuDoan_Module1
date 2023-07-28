@@ -8,14 +8,22 @@
 <script>
     let s1 = "aabcc";
     let s2 = "adcaa";
-    // timCacKyTuChung(soKyTu(s1),soKyTu(s1))
-    // soKyTu(s1);
-    console.log(soKyTu(s1))
+
+    console.log(check(s1,s2));
+
+    function check(s1, s2) {
+        let arr1 = soKyTu(s1);
+        let arr2 = soKyTu(s2);
+
+        let result = timCacKyTuChung(arr1, arr2);
+        return result;
+    }
+
     function soKyTu(a) {
         let arr = new Array();
-        for (let i = 0; i < a.length; i++) {
+        for (let i = 0; i < a.length; i++) {//add các phần tử trong chuỗi vào arr
             let check = false;
-            for (let j = 0; j < arr.length; j++) {
+            for (let j = 0; j < arr.length; j++) {//kiểm tra nếu đã tồn tại thì không add
                 if (a.charAt(i)==arr[j]){
                     check = true;
                 }
@@ -28,9 +36,9 @@
         }
 
         let count = new Array();
-        for (let i = 0; i < arr.length; i++) {
+        for (let i = 0; i < arr.length; i++) {//tạo 1 arr lưu trữ số lần xuất hiện của các ký tự
             count[i] = 0;
-            for (let j = 0; j < a.length; j++) {
+            for (let j = 0; j < a.length; j++) {//so sánh arr vừa tạo ở trên với chuỗi ban đầu
                 if (arr[i] == a.charAt(j)){
                     count[i] += 1;
                 }
@@ -42,27 +50,31 @@
         arrResult[0] = arr;
         arrResult[1] = count
 
-        return arrResult
+        return arrResult // arr 2 chiều arrR[0] lưu trữ kí tự arr. arrR[1] lưu trữ số lần xuất hiện tương ứng count
     }
     
     function timCacKyTuChung(arr1,arr2) {
         let a = arr1[0];
         let b = arr2[0];
-        let length = a.length;
+
+        let aCo = arr1[1];
+        let bCo = arr2[1];
+
+        let arrR = new Array();
 
         for (let i = 0; i < a.length; i++) {
-            check = false;
-            count = 0;
-            let local = -1;
             for (let j = 0; j < b.length; j++) {
-                if (a[i]== b[j]){
-                    count = arr1[1][i] ;
-                    if (arr2[1][j]<count){
-                        count = arr2[1][j];
+                if (a[i]===b[j]){
+                    arrR.push(a[i]);
+                    if (aCo[i]>bCo[j]){
+                        arrR.push(bCo[j]);
+                    }else {
+                        arrR.push(aCo[i]);
                     }
                 }
             }
         }
+        return arrR;
     }
 
 
