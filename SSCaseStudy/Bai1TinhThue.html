@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh Thue</title>
+</head>
+<body>
+<script>
+    let a = +prompt("nhập số tiền lương(triệu đồng):");
+    let thue;
+    if (a<7){
+        thue = a/100*5;
+    }else if (a<15){
+        thue = a/100*15;
+    }else {
+        thue = a /100 *20;
+    }
+    alert("số tiền thuế "+thue);
+    alert("số tiền sau thế"+(a-thue));
+</script>
+</body>
+</html>

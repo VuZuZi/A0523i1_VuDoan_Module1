@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đếm số lượng kí tự khác nhau trong xâu </title>
+</head>
+<body>
+<script>
+    let a = "abcdabcd";
+    a = a.toLowerCase();
+    let arr = new Array();
+
+    // tìm các kí tự
+    for (let i = 0; i < a.length; i++) {
+        let check = false;
+        for (let j = 0; j < arr.length; j++) {
+            if (a.charAt(i)==arr[j]){
+                check = true;
+            }
+        }
+        if (check){
+            continue
+        }else {
+            arr.push(a.charAt(i));
+        }
+    }
+    document.write("Có "+arr.length+" kí tự")
+</script>
+</body>
+</html>

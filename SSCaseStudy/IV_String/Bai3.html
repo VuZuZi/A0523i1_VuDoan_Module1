@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cho hai xâu kí tự, tìm số lượng kí tự chung giữa chúng.</title>
+</head>
+<body>
+<script>
+    let s1 = "aabcc";
+    let s2 = "adcaa";
+    // timCacKyTuChung(soKyTu(s1),soKyTu(s1))
+    // soKyTu(s1);
+    console.log(soKyTu(s1))
+    function soKyTu(a) {
+        let arr = new Array();
+        for (let i = 0; i < a.length; i++) {
+            let check = false;
+            for (let j = 0; j < arr.length; j++) {
+                if (a.charAt(i)==arr[j]){
+                    check = true;
+                }
+            }
+            if (check){
+                continue
+            }else {
+                arr.push(a.charAt(i));
+            }
+        }
+
+        let count = new Array();
+        for (let i = 0; i < arr.length; i++) {
+            count[i] = 0;
+            for (let j = 0; j < a.length; j++) {
+                if (arr[i] == a.charAt(j)){
+                    count[i] += 1;
+                }
+            }
+        }
+        // document.write(arr)
+        // document.write(count)
+        let arrResult = new Array();
+        arrResult[0] = arr;
+        arrResult[1] = count
+
+        return arrResult
+    }
+    
+    function timCacKyTuChung(arr1,arr2) {
+        let a = arr1[0];
+        let b = arr2[0];
+        let length = a.length;
+
+        for (let i = 0; i < a.length; i++) {
+            check = false;
+            count = 0;
+            let local = -1;
+            for (let j = 0; j < b.length; j++) {
+                if (a[i]== b[j]){
+                    count = arr1[1][i] ;
+                    if (arr2[1][j]<count){
+                        count = arr2[1][j];
+                    }
+                }
+            }
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

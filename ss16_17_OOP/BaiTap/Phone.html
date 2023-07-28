@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<!--Có một thông số về trạng thái pin tính bằng đơn vị số nguyên (tối đa 100 đv)-->
+
 <!--Có một vùng nhớ dùng để lưu tin nhắn đang soạn thảo.-->
 <!--Có một vùng nhớ dùng để lưu tin nhắn trong hộp thư đến.-->
 <!--Có một vùng nhớ dùng để lưu tin nhắn đã gửi.-->
@@ -24,42 +24,16 @@
 <!--Có một chiếc điện thoại nokia và một chiếc iphone-->
 <!--Chiếc điện thoại nokia soạn tin nhắn với nội dung bất kỳ và gửi cho chiếc iphoneChiếc iphone kiểm tra inbox và hiển thị tin đó.-->
 <script>
-    function phone(id,pin,wri,inbox,send) {
-        this.id = id;
-        this.pin = pin;
-        if (this.pin<0){
-            this.pin = 0;
-        }
-        if (this.pin>100){
-            this.pin = 100;
-        }
-        this.wri = wri;
-        this.inbox = inbox;
-        this.send = send;
-        this.status  = false;
+    class Phone{
+        constructor(id,pin) {
+            this.id = id;
+            this.pin = pin;
 
-        this.check = function () {
-            if (this.status){
-                alert("Status phone is online")
-            }else {
-                alert("Status phone is offline")
+            this.send = function (Phone) {
+                temp = prompt("");
+                this.send = temp;
+                Phone.inbox = temp;
             }
-        }
-        this.nutNguon = function () {
-            if (this.status){
-                this.status = false
-            }else {
-                this.status = true
-            }
-        }
-        this.power = function () {
-            this.pin += 10;
-        }
-        this.writing = function () {
-            this.wri = this.wri+(prompt(this.wri));
-        }
-        this.inbox = function () {
-
         }
     }
 </script>

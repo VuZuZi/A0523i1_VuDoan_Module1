@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th colspan="3">Menu</th>
+    </tr>
+    <tr> <td>1</td><td>Cafe</td>  </tr>
+    <tr> <td>2</td><td>Cam vắt</td>  </tr>
+    <tr> <td>3</td><td>Nước ép cà rốt</td>  </tr>
+    <tr> <td>4</td><td>Nước ép cà chua</td></tr>
+    <tr> <td>5</td><td>Nước lọc</td></tr>
+    <tr> <td>6</td><td>Nước dừa</td></tr>
+    <tr>
+        <td></td>
+        <td id="result"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>
+            <button onclick="orderF()">order</button>
+<!--            <button type="button" onclick="moneyAll()">Tính tiền</button>-->
+        </td>
+    </tr>
+</table>
+<script>
+    function orderF() {
+        let a = +prompt("nhập số của thưc uống");
+        if (a == 1){f = "Cafe"; alert("Cafe 15k");money = 15}
+       else if (a == 2){f = "Cam vắt"; alert("Cam vắt 32k")}
+        else if (a == 3){f = "Nước ép cà rốt"; alert("Nước ép cà rốt 125k");money = 125}
+        else if (a == 4){f = "Nước ép cà chua"; alert("Nước ép cà chua 5k");money = 5}
+        else if (a == 5){f = "Nước lọc"; alert("Nước lọc 2k");money = 2}
+        else if (a == 6){f = "Nước dừa"; alert("Nước dừa 25k");money = 25}
+        else {
+            document.getElementById("result").innerText = "error"
+        }
+        let b = +prompt("Nhập số lượng "+f+" muốn order ");
+         money *= b;
+         s = b + " x "+ f + " = " + money;
+         document.getElementById("result").innerText = s;
+    }
+</script>
+</body>
+<style>
+    td {
+
+    }
+    input {
+        width: 50px;
+    }
+</style>
+</html>

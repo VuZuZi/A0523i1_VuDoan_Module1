@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // let a = "tRuong    TaN   HAI";
+    let a = prompt("input");
+    let length = a.length;
+    a = a.toLowerCase(); // xóa viết hoa;
+    let b = new Array();
+
+    // xóa dấu cách
+    for (let i = 0; i < length; i++) {
+
+            if (a.charAt(i)==a.charAt(i+1)&&a.charAt(i)==' '){
+                continue;
+            }
+        b.push(a[i]);
+    }
+
+    // viết hoa
+    b[0] = b[0].toUpperCase();
+    for (let i = 0; i < length; i++) {
+        if (b[i] == ' '){
+            b[i+1] = b[i+1].toUpperCase();
+        }
+    }
+
+    document.write(b.join(""))// chuyển arr to String các phần tử trong arr cách nhau ""
+</script>
+</body>
+</html>

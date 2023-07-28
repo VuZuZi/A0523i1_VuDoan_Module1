@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt("input String");
+    let b = a.toLocaleUpperCase();
+    let count = 0;
+    for (let i = 0; i < b.length; i++) {
+        let c = b.charAt(i);
+        // 'O', 'U', 'I', 'A', 'E'
+        if (c == 'O'||c == 'U'|| c == 'I'|| c == 'A'|| c == 'E'){
+            count++;
+        }
+    }
+    document.write("Chuỗi: "+a+" có "+count+" Nguyên âm");
+</script>
+</body>
+</html>
