@@ -5,94 +5,318 @@
     <title>Xây dựng hệ thống quản lý học viên </title>
 </head>
 <body>
-<script>
-    class Students {
-        constructor(id,name, clas,mail,birth,module) {
-            this.id = id;
-            this.name = name;
-            this.clas = clas;
-            this.mail = mail;
-            this.birth = birth;
-            this.module = module;
+    <table>
+        <tr>
+            <td>
+                <button onclick="addStudent()">Thêm học viên mới</button>
+            </td>
+            <td>
+                <button onclick="editStudentById()">Sửa thông tin học viên</button>
+            </td>
+            <td>
+                <button onclick="removeStudents()">Xóa học viên</button>
+            </td>
+        </tr>
+    </table>
+    <div id="tableBook"></div>
+    <div id="addS"></div>
+    <script>
+        let studentCounter = 3; // Biến đếm số học viên
+
+        // Hàm để định dạng số thành chuỗi có đủ 4 chữ số bằng cách thêm các số "0" vào trước
+        function formatID(number) {
+            return "HV-" + number.toString().padStart(4, '0');
         }
+        class Student{
+            constructor(id, name, lop, email, ngaySinh, module) {
+                this._id = id;
+                this._name = name;
+                this._lop = lop;
+                this._email = email;
+                this._ngaySinh = ngaySinh;
+                this._module = module;
+            }
 
 
-        get id() {
-            return this.id;
+            get id() {
+                return this._id;
+            }
+
+            set id(value) {
+                this._id = value;
+            }
+
+            get name() {
+                return this._name;
+            }
+
+            set name(value) {
+                this._name = value;
+            }
+
+            get lop() {
+                return this._lop;
+            }
+
+            set lop(value) {
+                this._lop = value;
+            }
+
+            get email() {
+                return this._email;
+            }
+
+            set email(value) {
+                this._email = value;
+            }
+
+            get ngaySinh() {
+                return this._ngaySinh;
+            }
+
+            set ngaySinh(value) {
+                this._ngaySinh = value;
+            }
+
+            get module() {
+                return this._module;
+            }
+
+            set module(value) {
+                this._module = value;
+            }
         }
+        let studentsList = [];
 
-        set id(value) {
-            this.id = value;
-        }
+        let s1 = new Student(1,"a","22i1","a@gmail.com","2001-2-11",1);
+        let s2 = new Student(2,"b","23i2","b@gmail.com","2002-2-11",2);
+        let s3 = new Student(3,"c","22i3","c@gmail.com","2003-5-11",3);
 
-        get name() {
-            return this.name;
-        }
+        studentsList.push(s1);
+        studentsList.push(s2);
+        studentsList.push(s3);
 
-        set name(value) {
-            this.name = value;
-        }
-
-        get clas() {
-            return this.clas;
-        }
-
-        set clas(value) {
-            this.clas = value;
-        }
-
-        get mail() {
-            return this.mail;
-        }
-
-        set mail(value) {
-            this.mail = value;
-        }
-
-        get birth() {
-            return this.birth;
-        }
-
-        set birth(value) {
-            this.birth = value;
-        }
-
-        get module() {
-            return this.module;
-        }
-
-        set module(value) {
-            this.module = value;
-        }
-    }
-    function showStudentsList(arr) {
-        let tableShow = "<table border='1'>";
-        tableShow += "<tr> " +
-            "<th>#</th>" +
-            "<th>ID </th>" +
-            "<th>Tên </th>" +
-            "<th>Class</th>" +
-            "<th>Email</th>" +
-            "<th>Birth</th>" +
-            "<th>Module</th>" +
-            " </tr>";
-
-        for (let i = 0; i < arr.length; i++) {
+        function showStudents(arr){
+            let tableShow = "<table border=1px style='width: 750px'>";
             tableShow += "<tr> " +
-                "<td>" + (i + 1) + "</td>" +
-                "<td>" + arr[i].id + "</td>" +
-                "<td>" + arr[i].name + "</td>" +
-                "<td>" + arr[i].clas + "</td>" +
-                "<td>" + arr[i].mail + "</td>" +
-                "<td>" + arr[i].birth + "</td>" +
-                "<td>" + arr[i].module + "</td>" +
-                "</tr>";
+                "<th>Mã học viên</th>" +
+                "<th>Tên</th>" +
+                "<th>Lớp</th>" +
+                "<th>Email</th>" +
+                "<th>Ngày Sinh</th>" +
+                "<th>Module</th>" +
+                " </tr>";
+            for (let i = 0; i < arr.length; i++) {
+                tableShow += "<tr>"+
+                    "<td>"+arr[i]._id+"</td>"+
+                    "<td>"+arr[i]._name+"</td>"+
+                    "<td>"+arr[i]._lop+"</td>"+
+                    "<td>"+arr[i]._email+"</td>"+
+                    "<td>"+arr[i]._ngaySinh+"</td>"+
+                    "<td>"+arr[i]._module+"</td>"
+                tableShow += "</tr>"
+            }
+                " </table>";
+            document.getElementById("tableBook").innerHTML = tableShow;
+
         }
 
-        tableShow += "</table>";
-        document.getElementById("tableBook").innerHTML = strTable;
-    }
+        function addStudent() {
+            let addTable = "<table border=1px style='width:'> "+
+                "<tr>"+
+                "<td><label for='idS'>ID</label>"+
+                "<td>"+"<input type='text' id='idS'>"+ "</td>"+
+                "</tr><tr>"+
+                "<td><label for='name'>Tên</label>"+
+                "<td>"+"<input type='text' id='name'>"+ "</td>"+
+                "</tr><tr>"+
+                "<td><label for='cls'>Lớp</label>"+
+                "<td>"+"<input type='text' id='cls'>"+ "</td>"+
+                "</tr><tr>"+
+                "<td><label for='mail'>Email</label>"+
+                "<td>"+"<input type='email' id='mail'>"+ "</td>"+
+                "</tr><tr>"+
+                "<td><label for='date'>Ngày Sinh</label>"+
+                "<td>"+"<input type='date' id='date'>"+ "</td>"+
+                "</tr><tr>"+
+                "<td><label for='md'>Module</label>"+
+                "<td>"+"<input type='number' id='md'>"+ "</td>"+
+                "</tr>"+
+                "</tr><tr>"+
+                "<td>"+"<button onclick='addStudentforArr()'>add</button>"+ "</td>"+
+                "</tr>"+
+                "</table>"
+            document.getElementById("addS").innerHTML = addTable;
+        }
+        function addStudentforArr() {
+            let id = document.getElementById("idS").value;
+            let name = document.getElementById("name").value;
+            let cls = document.getElementById("cls").value;
+            let email = document.getElementById("mail").value;
+            let ngaySinh = document.getElementById("date").value;
+            let module = document.getElementById("md").value;
 
-</script>
+            let sTemp = new Student(id,name,cls,email,ngaySinh,module);
+            studentsList.push(sTemp);
+            showStudents(studentsList);
+        }
+
+        function editStudentById() {
+            let addTable = "<table border=1px style='width:'> "+
+                "<tr>"+
+                "<td><label for='idS'>Mã học viên cần sửa</label>"+
+                "<td>"+"<input type='text' id='idS'>"+ "</td>"+
+                "<td>"+"<button type='submit' onclick='inforEditStudent()'>tìm</button>"+ "</td>"+
+                "</tr>"+
+                "</table>"
+            document.getElementById("addS").innerHTML = addTable;
+        }
+
+
+        function inforEditStudent() {
+            let id = document.getElementById("idS").value;
+            let check = false;
+            for (let i = 0; i < studentsList.length; i++) {
+                if (studentsList[i]._id==id){
+                    check = true;
+                    // alert("true")
+                    let tableEdit = "<table border=1px style='width:'> "+
+                        "<tr>"+
+                        "<td>Mã học viên cần update</td>"+
+                        "<td>"+"<p id='idS'>"+id+"</p>"+ "</td>"+
+                        "</tr><tr>"+
+                        "<td><label for='name'>Tên</label>"+
+                        "<td>"+"<input type='text' id='name' value='"+studentsList[i]._name+"'>"+ "</td>"+
+                        "</tr><tr>"+
+                        "<td><label for='cls'>Lớp</label>"+
+                        "<td>"+"<input type='text' id='cls'value='"+studentsList[i]._lop+"'>"+ "</td>"+
+                        "</tr><tr>"+
+                        "<td><label for='mail'>Email</label>"+
+                        "<td>"+"<input type='email' id='mail'value='"+studentsList[i]._email+"'>"+ "</td>"+
+                        "</tr><tr>"+
+                        "<td><label for='date'>Ngày Sinh</label>"+
+                        "<td>"+"<input type='date' id='date' >"+ "</td>"+
+                        "</tr><tr>"+
+                        "<td><label for='md'>Module</label>"+
+                        "<td>"+"<input type='number' id='md'value='"+studentsList[i]._module+"'>"+ "</td>"+
+                        "</tr>"+
+                        "</tr><tr>"+
+                        "<td colspan='2'>"+"<button onclick='updateStudents()' style='width: 100%'>update</button>"+ "</td>"+
+                        "</tr>"+
+                        "</table>"
+                    document.getElementById("addS").innerHTML = tableEdit;
+                }
+            }
+            if (check == false){
+                alert("id không tồn tại")
+            }
+        }
+
+        function updateStudents() {
+            let id = document.getElementById("idS").innerText;
+            console.log(id);
+            let name = document.getElementById("name").value;
+            let cls = document.getElementById("cls").value;
+            let email = document.getElementById("mail").value;
+            let ngaySinh = document.getElementById("date").value;
+            let module = document.getElementById("md").value;
+
+            let found = false;
+            for (let i = 0; i < studentsList.length; i++) {
+                if (studentsList[i]._id == id) {
+                    studentsList[i]._name = name;
+                    studentsList[i]._lop = cls;
+                    studentsList[i]._email = email;
+                    studentsList[i]._ngaySinh = ngaySinh;
+                    studentsList[i]._module = module;
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found) {
+                alert(id)
+                alert("ID not found.");
+            } else {
+                showStudents(studentsList);
+            }
+        }
+
+        function removeStudents() {
+            let idRemove = prompt("nhập mã sinh viên cần xóa: ");
+            check = false;
+            let index = -1;
+            for (let i = 0; i < studentsList.length; i++) {
+                if (studentsList[i]._id==idRemove){
+                    check = true;
+                    let checkPeople = confirm("bạn có chắc muốn xóa học viên "+idRemove);
+                    // alert("true");
+                    if (checkPeople) {
+                        studentsList.splice(i, 1);
+                        showStudents(studentsList);
+                    }else {
+                        break;
+                    }
+                }
+            }
+            if (!check) {
+                alert("không tìm thấy mã sinh viên "+idRemove);
+            }
+        }
+
+        showStudents(studentsList);
+        console.log(studentsList);
+
+    </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
