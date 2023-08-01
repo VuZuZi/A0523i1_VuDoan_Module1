@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let  a = [];
+    let check = true;
+    let length = 51;
+    do {
+        check = true;
+        length= +prompt("Nhập kích thước của mảng: ");
+        if (length > 50 ){
+            alert("kích thước của mảng <= 50");
+            check = false;
+        }
+        if (length < 1){
+            alert("kích thước của mảng err")
+            check = false;
+        }
+    }while (!check)
+
+    for (let i = 0; i < length; i++) {
+        let temp = +prompt("Arr["+(i+1)+"]: ");
+        a.push(temp);
+    }
+    console.log(a);
+    let b = [];
+    for (let i = 1; i < a.length; i++) {
+        if (a[i-1]>a[i]){
+            b.push(1)
+        }else {
+            b.push(0)
+        }
+    }
+    console.log(b);
+
+    let checkS = true;
+    for (let i = 1; i < b.length; i++) {
+        if (b[i-1]==b[i]){
+            checkS = false;
+        }
+    }
+
+    if (checkS){
+        alert("mảng dạng sóng");
+    }else {
+        alert("mảng không phải dạng sóng")
+    }
+
+
+
+</script>
+</body>
+</html>

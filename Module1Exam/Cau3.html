@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <button onclick="addX()">Thêm xe</button>
+            <button onclick="remove()">Xóa Xe</button>
+        </td>
+
+    </tr>
+</table>
+<div id="show"></div>
+<div id="addS"></div>
+
+<script>
+    class Xe {
+        constructor(bienSo, name, cmnd, hangXe, phiGuiXe) {
+            this._bienSo = bienSo;
+            this._name = name;
+            this._cmnd = cmnd;
+            this._hangXe = hangXe;
+            this._phiGuiXe = phiGuiXe;
+        }
+
+
+        get bienSo() {
+            return this._bienSo;
+        }
+
+        set bienSo(value) {
+            this._bienSo = value;
+        }
+
+        get name() {
+            return this._name;
+        }
+
+        set name(value) {
+            this._name = value;
+        }
+
+        get cmnd() {
+            return this._cmnd;
+        }
+
+        set cmnd(value) {
+            this._cmnd = value;
+        }
+
+        get hangXe() {
+            return this._hangXe;
+        }
+
+        set hangXe(value) {
+            this._hangXe = value;
+        }
+
+        get phiGuiXe() {
+            return this._phiGuiXe;
+        }
+
+        set phiGuiXe(value) {
+            this._phiGuiXe = value;
+        }
+    }
+
+    let arrXe = [];
+
+    function xeList(arr) {
+        let tableShow = "<table border=1px style='width: 750px'>";
+        tableShow += "<tr> " +
+            "<th>Biển số xe</th>" +
+            "<th>Họ tên SV</th>" +
+            "<th>cmnd</th>" +
+            "<th>Kiểu xe</th>" +
+            "<th>Phí gửi xe</th>" +
+            " </tr>";
+        for (let i = 0; i < arr.length; i++) {
+            tableShow += "<tr>"+
+                "<td>"+arr[i]._bienSo+"</td>"+
+                "<td>"+arr[i]._name+"</td>"+
+                "<td>"+arr[i]._cmnd+"</td>"+
+                "<td>"+arr[i]._hangXe+"</td>"+
+                "<td>"+arr[i]._phiGuiXe+"</td>"
+            tableShow += "</tr>"
+        }
+        " </table>";
+        document.getElementById("show").innerHTML = tableShow;
+    }
+
+    function inputBS() {
+        let bs;
+        do {
+            bs = prompt("Nhập bs");
+            if (bs.length<20){
+                break;
+            }
+        }while (true)
+        return bs;
+    }
+
+    function addX() {
+        let bs, name, id,price,a;
+
+        bs = inputBS();
+        // do {
+        //     bs = prompt("Nhập bs");
+        //     if (bs.length<20){
+        //         break;
+        //     }
+        // }while (true)
+
+        do {
+            name = prompt("Name: ");
+            if (name.length<=50){
+                break;      
+            }
+        }while (true)
+
+        do {
+            id = +prompt("CMND:");
+            if (id - id == 0){
+                break;
+            }
+        }while (true)
+
+        let arrType = ["Honda","Yamaha","SYM","Piaggio","Suzuki","Ducati","Other"];
+            for (let i = 0; i < arrType.length; i++) {
+                a = confirm("xe của bạn là "+arrType[i])
+                if (a){
+                    a = arrType[i];
+                    break;
+                }
+            }
+        do {
+            price = +prompt("Nhập phí gửi xe: ")
+            if (price-price == 0){
+                break;
+            }else {
+                alert("input err")
+            }
+        }while (true);
+
+        let xTemp = new Xe(bs,name,id,a,price);
+        arrXe.push(xTemp);
+        xeList(arrXe)
+
+    }
+
+    function remove(){
+        let bs = inputBS();
+        let check = false;
+        for (let i = 0; i < arrXe.length; i++) {
+            if (arrXe[i]._bienSo == bs){
+                check = true;
+                let xn = confirm("bạn có muốn xóa xe "+bs);
+                if (xn){
+                    arrXe.splice(i, 1);
+                }
+                xeList(arrXe)
+                break;
+            }
+        }
+        if (!check){
+            alert("không tìm thấy")
+        }
+    }
+
+
+    let x1 = new Xe(1,"tuabas",2,"sa",2);
+    arrXe.push(x1)
+    arrXe.push(x1)
+    arrXe.push(x1)
+
+    xeList(arrXe)
+</script>
+</body>
+</html>

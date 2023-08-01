@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let arr = checkDate();
+    checkNamNhuan(arr);
+
+    function checkDate() {
+        let check = true;
+        let arr = []
+        do {
+            let date = prompt("Input date");
+
+            arr =  date.split("/");
+            if (arr[0].length<2||arr[0].length>2||arr[0]>31||arr[0]<0){
+                        alert("input date err dd/MM/yyyy");
+                check = false;
+            }
+            if (arr[1].length<2||arr[1].length>2||arr[1]>12||arr[1]<1){
+                alert("input date err dd/MM/yyyy");
+                check = false;
+            }
+            if (arr[2].length<4||arr[2].length>4||arr[2]<0){
+                alert("input date err dd/MM/yyyy");
+                check = false;
+            }
+
+
+        }while (!check)
+        return arr
+    }
+
+function checkNamNhuan(arr){
+    let year = arr[2];
+    let isLeapYear = false;
+
+    if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            if (year % 400 == 0) {
+                isLeapYear = true;
+            }
+        } else {
+            isLeapYear = true;
+        }
+    }
+
+    if (isLeapYear) {
+        alert(year + " is a leap year");
+    } else {
+        alert(year + " is NOT a leap year");
+    }
+}
+
+</script>
+</body>
+</html>
